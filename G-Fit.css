@@ -1,0 +1,156 @@
+body {
+    background: linear-gradient(90deg, #baa483, #2ecc71);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.98);
+width: 95%;
+max-width: 700px;
+    padding: 30px;
+border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    text-align: center;
+    margin: 20px 0;
+}
+
+h1 { 
+color: #2c3e50; 
+margin-bottom: 5px; 
+}
+
+h1 span { 
+font-size: 0.9em; 
+}
+
+p { 
+color: #7f8c8d; 
+margin-top: 0; 
+margin-bottom: 25px; 
+}
+
+.input-row { 
+display: flex; 
+gap: 15px; 
+margin-bottom: 20px; 
+}
+
+.group {
+flex: 1; 
+text-align: left; 
+}
+
+label { 
+font-size: 0.9em; 
+font-weight: bold; 
+color: #34495e; 
+}
+
+input[type="number"] {
+width: 100%;
+padding: 12px;
+margin-top: 5px;
+border: 1px solid #ddd;
+border-radius: 8px;
+box-sizing: border-box;
+}
+
+.grille-check {
+display: grid;
+grid-template-columns: 1fr 1fr;
+text-align: left;
+gap: 10px;
+margin: 20px 0;
+background: #f1f3f4;
+padding: 15px;
+border-radius: 10px;
+}
+
+button {
+background: #38ab68;
+color: white;
+border: none;
+padding: 15px 40px;
+border-radius: 30px;
+font-size: 1.1em;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+button:hover { 
+background: #2c3e50; 
+}
+
+#resultat.hidden { 
+display: none; 
+}
+
+#imc-box {
+margin-top: 30px;
+padding: 20px;
+border-radius: 12px;
+color: white; /* Le texte reste blanc pour contraster avec les couleurs du JS */
+font-size: 1.1em;
+font-weight: bold;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+transition: background-color 0.5s ease; /* Petit effet de transition fluide */
+}
+
+.programme-bloc {
+margin-top: 40px;
+border-top: 2px solid #eee;
+padding-top: 20px;
+}
+
+.programme-bloc h3 { color: #27ae60; text-transform: uppercase; margin-bottom: 20px; }
+
+.grille-exercices {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+}
+
+.exercice-item {
+background: white;
+border: 1px solid #eee;
+padding: 15px;
+border-radius: 15px;
+text-align: center;
+box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.exercice-item img {
+width: 100%;
+height: 130px;
+object-fit: contain;
+margin-bottom: 10px;
+}
+
+.exercice-item strong {
+display: block;
+color: #2c3e50;
+margin-bottom: 5px; 
+}
+
+.exercice-item span { 
+color: #27ae60; 
+font-weight: bold;
+font-size: 0.85em; 
+display: block; 
+margin-bottom: 10px; 
+}
+
+.description {
+font-size: 0.75em;
+color: #666;
+border-top: 1px dashed #ddd;
+padding-top: 10px;
+line-height: 1.4;
+text-align: left;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head> 
+    <meta charset="UTF-8">
+    <title>G-Fit | Coach Personnel 🧘‍♀️</title>
+    <link rel="stylesheet" href="G-Fits.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>G-Fit <span>🧘‍♀️</span></h1>
+            <p>Votre silhouette, votre programme</p>
+        </header>
+
+        <div class="formulaire">
+            <div class="input-row">
+                <div class="group">
+                    <label>Poids (kg)</label>
+                    <input type="number" id="poids" placeholder="Ex: 60">
+                </div>
+                <div class="group">
+                    <label>Taille (cm)</label>
+                    <input type="number" id="taille" placeholder="Ex: 165">
+                </div>
+            </div>
+
+            <label class="titre-checkbox">Ciblez vos objectifs :</label>
+            <div class="grille-check">
+                <label><input type="checkbox" name="objectif" value="ventre"> Ventre Plat</label>
+                <label><input type="checkbox" name="objectif" value="jambes"> Jambes & Fessiers</label>
+                <label><input type="checkbox" name="objectif" value="bras"> Bras & Épaules</label>
+                <label><input type="checkbox" name="objectif" value="dos"> Dos & Posture</label>
+                <label><input type="checkbox" name="objectif" value="perdre"> Cardio / Perte de poids</label>
+            </div>
+
+            <button onclick="genererGfit()">Générer mon programme</button>
+        </div>
+
+        <div id="resultat" class="hidden">
+            <div id="imc-box"></div>
+
+            <div id="prog-ventre" class="programme-bloc" style="display:none;">
+                <h3>Objectif Ventre Plat</h3>
+                <div class="grille-exercices">
+                    <div class="exercice-item">
+                        <img src="images/Crunchs classiques.webp">
+                        <strong>Crunchs classiques</strong>
+                        <span>3 séries de 20 reps</span>
+                        <p class="description">Allongée sur le dos, soulevez légèrement les épaules vers vos genoux.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/Planche.jpg">
+                        <strong>Planche</strong>
+                        <span>3 séries de 45 sec</span>
+                        <p class="description">Maintenez le corps bien droit en appui sur vos avant-bras.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/Russian Twists.jpg">
+                        <strong>Russian Twists</strong>
+                        <span>3 séries de 30 sec</span>
+                        <p class="description">Assise, inclinez le buste et touchez le sol de chaque côté.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/Levés de jambes.jpg.">
+                        <strong>Levés de jambes</strong>
+                        <span>3 séries de 15 reps</span>
+                        <p class="description">Allongée, levez les jambes tendues sans creuser le dos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="prog-jambes" class="programme-bloc" style="display:none;">
+                <h3>Objectif Jambes & Fessiers</h3>
+                <div class="grille-exercices">
+                    <div class="exercice-item">
+                        <img src="images/squats.jpg">
+                        <strong>Squats</strong>
+                        <span>4 séries de 20 reps</span>
+                        <p class="description">Descendez les fesses en arrière comme pour vous asseoir.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/fentes avant.jpg">
+                        <strong>Fentes avant</strong>
+                        <span>3 séries de 12 reps</span>
+                        <p class="description">Faites un grand pas en avant et descendez le genou arrière.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/pont fessier.jpg">
+                        <strong>Pont fessier</strong>
+                        <span>3 séries de 20 reps</span>
+                        <p class="description">Allongée, levez le bassin en serrant les fessiers.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/Chaise. jpg.avif">
+                        <strong>Chaise</strong>
+                        <span>3 fois 40 sec</span>
+                        <p class="description">Le dos contre le mur, restez en position assise.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="prog-bras" class="programme-bloc" style="display:none;">
+                <h3>Objectif Bras & Épaules</h3>
+                <div class="grille-exercices">
+                    <div class="exercice-item">
+                        <img src="images/Pompe.jpg">
+                        <strong>Pompe</strong>
+                        <span>3 séries de 10 reps</span>
+                        <p class="description">Abaissez votre corps vers le sol et repoussez avec les bras.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/Dips sur chaise.jpg">
+                        <strong>Dips sur chaise</strong>
+                        <span>3 séries de 12 reps</span>
+                        <p class="description">En appui sur une chaise, descendez et remontez le buste.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/Cercles de bras.webp">
+                        <strong>Cercles de bras</strong>
+                        <span>3 séries de 1 min</span>
+                        <p class="description">Bras tendus sur les côtés, faites des petits cercles réguliers.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/Planche dynamique.jpg">
+                        <strong>Planche dynamique</strong>
+                        <span>3 séries de 10 reps</span>
+                        <p class="description">Alternez la position sur les mains puis sur les avant-bras.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="prog-dos" class="programme-bloc" style="display:none;">
+                <h3>Objectif Dos & Posture</h3>
+                <div class="grille-exercices">
+                    <div class="exercice-item">
+                        <img src="images/superman.jpg">
+                        <strong>Superman</strong>
+                        <span>3 séries de 15 reps</span>
+                        <p class="description">Ventre au sol, décollez simultanément bras et jambes.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/pont. jpg.avif">
+                        <strong>Pont</strong>
+                        <span>3 séries de 15 reps</span>
+                        <p class="description">Variante du pont pour mobiliser la colonne vertébrale.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/chat-vache.jpg">
+                        <strong>Chat-Vache</strong>
+                        <span>2 minutes</span>
+                        <p class="description">À quatre pattes, alternez dos rond et dos creux.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/Stretch.jpg">
+                        <strong>Stretch</strong>
+                        <span>2 minutes</span>
+                        <p class="description">Étirez tout votre corps pour détendre vos muscles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="prog-perdre" class="programme-bloc" style="display:none;">
+                <h3>Objectif Cardio / Perte de poids</h3>
+                <div class="grille-exercices">
+                    <div class="exercice-item">
+                        <img src="images/Jumping Jacks.jpg">
+                        <strong>Jumping Jacks</strong>
+                        <span>4 séries de 45 sec</span>
+                        <p class="description">Écartez bras et jambes en sautant, puis resserrez.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/Burpees.jpg">
+                        <strong>Burpees</strong>
+                        <span>3 séries de 10 reps</span>
+                        <p class="description">Combinez squat, pompe et saut en un seul mouvement.</p>
+                    </div>
+                    <div class="exercice-item">
+                        <img src="images/Courses sur place.jpg">
+                        <strong>Courses sur place</strong>
+                        <span>3 séries de 1 min</span>
+                        <p class="description">Courez sur place en montant bien les genoux.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="G-Fit.js"></script>
+</body>
+</html>
